@@ -1,19 +1,19 @@
-import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Separator } from '@/components/ui/separator';
-import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { 
-  User, 
-  Calendar, 
-  Phone, 
-  MapPin, 
-  Heart, 
-  Activity, 
-  FileText, 
-  Camera, 
+import { useState } from "react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Separator } from "@/components/ui/separator";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import {
+  User,
+  Calendar,
+  Phone,
+  MapPin,
+  Heart,
+  Activity,
+  FileText,
+  Camera,
   Stethoscope,
   Brain,
   Zap,
@@ -21,8 +21,8 @@ import {
   Eye,
   AlertTriangle,
   CheckCircle,
-  Clock
-} from 'lucide-react';
+  Clock,
+} from "lucide-react";
 
 export default function Index() {
   const [selectedExam, setSelectedExam] = useState<string | null>(null);
@@ -39,7 +39,7 @@ export default function Index() {
     adresse: "123 Rue de la République, 75001 Paris",
     numeroSecu: "2 85 03 75 123 456 78",
     medecin: "Dr. Martin Lefebvre",
-    service: "Cardiologie"
+    service: "Cardiologie",
   };
 
   const examens = [
@@ -52,10 +52,10 @@ export default function Index() {
       diagnostic: "Pneumonie lobaire droite",
       traitement: "Antibiothérapie prescrite",
       images: 2,
-      icon: Camera
+      icon: Camera,
     },
     {
-      id: "EX-002", 
+      id: "EX-002",
       type: "IRM cérébrale",
       date: "2024-01-10",
       medecin: "Dr. Moreau",
@@ -63,7 +63,7 @@ export default function Index() {
       diagnostic: "Aucune anomalie détectée",
       traitement: "Surveillance recommandée",
       images: 24,
-      icon: Brain
+      icon: Brain,
     },
     {
       id: "EX-003",
@@ -74,7 +74,7 @@ export default function Index() {
       diagnostic: "Insuffisance mitrale légère",
       traitement: "Suivi cardiologique",
       images: 8,
-      icon: Heart
+      icon: Heart,
     },
     {
       id: "EX-004",
@@ -85,8 +85,8 @@ export default function Index() {
       diagnostic: "Examen normal",
       traitement: "Aucun traitement nécessaire",
       images: 156,
-      icon: Activity
-    }
+      icon: Activity,
+    },
   ];
 
   const consultations = [
@@ -95,15 +95,15 @@ export default function Index() {
       type: "Consultation cardiologie",
       medecin: "Dr. Lefebvre",
       diagnostic: "Hypertension artérielle",
-      traitement: "Modification du traitement antihypertenseur"
+      traitement: "Modification du traitement antihypertenseur",
     },
     {
       date: "2024-01-10",
-      type: "Consultation neurologie", 
+      type: "Consultation neurologie",
       medecin: "Dr. Moreau",
       diagnostic: "Céphalées de tension",
-      traitement: "Traitement symptomatique"
-    }
+      traitement: "Traitement symptomatique",
+    },
   ];
 
   const laboratoire = [
@@ -111,20 +111,20 @@ export default function Index() {
       date: "2024-01-12",
       type: "Bilan lipidique",
       resultats: "Cholestérol total: 2.1 g/L (Normal)",
-      status: "normal"
+      status: "normal",
     },
     {
       date: "2024-01-12",
       type: "Numération formule sanguine",
       resultats: "Hémoglobine: 13.5 g/dL (Normal)",
-      status: "normal"
+      status: "normal",
     },
     {
       date: "2024-01-10",
       type: "Troponine",
       resultats: "0.02 ng/mL (Élevé)",
-      status: "anormal"
-    }
+      status: "anormal",
+    },
   ];
 
   return (
@@ -135,10 +135,14 @@ export default function Index() {
           <div className="flex items-center space-x-4">
             <div className="flex items-center space-x-2">
               <Stethoscope className="h-8 w-8 text-primary" />
-              <h1 className="text-2xl font-bold text-foreground">MediCare Pro</h1>
+              <h1 className="text-2xl font-bold text-foreground">
+                MediCare Pro
+              </h1>
             </div>
             <Separator orientation="vertical" className="h-6" />
-            <span className="text-sm text-muted-foreground">Dossier Patient</span>
+            <span className="text-sm text-muted-foreground">
+              Dossier Patient
+            </span>
           </div>
           <div className="flex items-center space-x-2">
             <Badge variant="outline">{patient.service}</Badge>
@@ -163,7 +167,8 @@ export default function Index() {
             <div className="flex items-start space-x-6">
               <Avatar className="h-20 w-20">
                 <AvatarFallback className="text-lg font-semibold bg-primary/10 text-primary">
-                  {patient.prenom[0]}{patient.nom[0]}
+                  {patient.prenom[0]}
+                  {patient.nom[0]}
                 </AvatarFallback>
               </Avatar>
               <div className="flex-1 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -172,11 +177,15 @@ export default function Index() {
                     <h3 className="text-2xl font-bold text-foreground">
                       {patient.prenom} {patient.nom}
                     </h3>
-                    <p className="text-sm text-muted-foreground">ID: {patient.id}</p>
+                    <p className="text-sm text-muted-foreground">
+                      ID: {patient.id}
+                    </p>
                   </div>
                   <div className="flex items-center space-x-2 text-sm">
                     <Calendar className="h-4 w-4 text-muted-foreground" />
-                    <span>{patient.dateNaissance} ({patient.age} ans)</span>
+                    <span>
+                      {patient.dateNaissance} ({patient.age} ans)
+                    </span>
                   </div>
                   <div className="flex items-center space-x-2 text-sm">
                     <User className="h-4 w-4 text-muted-foreground" />
@@ -195,12 +204,18 @@ export default function Index() {
                 </div>
                 <div className="space-y-4">
                   <div>
-                    <p className="text-sm font-medium">Numéro de sécurité sociale</p>
-                    <p className="text-sm text-muted-foreground">{patient.numeroSecu}</p>
+                    <p className="text-sm font-medium">
+                      Numéro de sécurité sociale
+                    </p>
+                    <p className="text-sm text-muted-foreground">
+                      {patient.numeroSecu}
+                    </p>
                   </div>
                   <div>
                     <p className="text-sm font-medium">Médecin référent</p>
-                    <p className="text-sm text-muted-foreground">{patient.medecin}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {patient.medecin}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -211,19 +226,31 @@ export default function Index() {
         {/* Medical History Tabs */}
         <Tabs defaultValue="examens" className="space-y-6">
           <TabsList className="grid w-full grid-cols-4">
-            <TabsTrigger value="examens" className="flex items-center space-x-2">
+            <TabsTrigger
+              value="examens"
+              className="flex items-center space-x-2"
+            >
               <Camera className="h-4 w-4" />
               <span>Imagerie & PACS</span>
             </TabsTrigger>
-            <TabsTrigger value="consultations" className="flex items-center space-x-2">
+            <TabsTrigger
+              value="consultations"
+              className="flex items-center space-x-2"
+            >
               <FileText className="h-4 w-4" />
               <span>Consultations</span>
             </TabsTrigger>
-            <TabsTrigger value="laboratoire" className="flex items-center space-x-2">
+            <TabsTrigger
+              value="laboratoire"
+              className="flex items-center space-x-2"
+            >
               <Zap className="h-4 w-4" />
               <span>Laboratoire</span>
             </TabsTrigger>
-            <TabsTrigger value="historique" className="flex items-center space-x-2">
+            <TabsTrigger
+              value="historique"
+              className="flex items-center space-x-2"
+            >
               <Clock className="h-4 w-4" />
               <span>Historique</span>
             </TabsTrigger>
@@ -233,14 +260,16 @@ export default function Index() {
           <TabsContent value="examens" className="space-y-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
               <div className="space-y-4">
-                <h3 className="text-lg font-semibold">Examens d'imagerie récents</h3>
+                <h3 className="text-lg font-semibold">
+                  Examens d'imagerie récents
+                </h3>
                 {examens.map((examen) => {
                   const IconComponent = examen.icon;
                   return (
-                    <Card 
-                      key={examen.id} 
+                    <Card
+                      key={examen.id}
                       className={`cursor-pointer transition-all ${
-                        selectedExam === examen.id ? 'ring-2 ring-primary' : ''
+                        selectedExam === examen.id ? "ring-2 ring-primary" : ""
                       }`}
                       onClick={() => setSelectedExam(examen.id)}
                     >
@@ -251,12 +280,18 @@ export default function Index() {
                           </div>
                           <div className="flex-1">
                             <div className="flex items-center justify-between mb-2">
-                              <h4 className="font-semibold text-sm">{examen.type}</h4>
-                              <Badge 
-                                variant={examen.statut === 'positif' ? 'destructive' : 'default'}
+                              <h4 className="font-semibold text-sm">
+                                {examen.type}
+                              </h4>
+                              <Badge
+                                variant={
+                                  examen.statut === "positif"
+                                    ? "destructive"
+                                    : "default"
+                                }
                                 className="text-xs"
                               >
-                                {examen.statut === 'positif' ? (
+                                {examen.statut === "positif" ? (
                                   <AlertTriangle className="h-3 w-3 mr-1" />
                                 ) : (
                                   <CheckCircle className="h-3 w-3 mr-1" />
@@ -264,9 +299,15 @@ export default function Index() {
                                 {examen.statut}
                               </Badge>
                             </div>
-                            <p className="text-xs text-muted-foreground mb-1">{examen.date} • {examen.medecin}</p>
-                            <p className="text-sm font-medium">{examen.diagnostic}</p>
-                            <p className="text-xs text-muted-foreground mt-1">{examen.images} images disponibles</p>
+                            <p className="text-xs text-muted-foreground mb-1">
+                              {examen.date} • {examen.medecin}
+                            </p>
+                            <p className="text-sm font-medium">
+                              {examen.diagnostic}
+                            </p>
+                            <p className="text-xs text-muted-foreground mt-1">
+                              {examen.images} images disponibles
+                            </p>
                           </div>
                         </div>
                       </CardContent>
@@ -279,9 +320,9 @@ export default function Index() {
               <div className="space-y-4">
                 {selectedExam ? (
                   (() => {
-                    const examen = examens.find(e => e.id === selectedExam);
+                    const examen = examens.find((e) => e.id === selectedExam);
                     if (!examen) return null;
-                    
+
                     return (
                       <Card>
                         <CardHeader>
@@ -295,27 +336,46 @@ export default function Index() {
                         </CardHeader>
                         <CardContent className="space-y-4">
                           <div>
-                            <h4 className="font-semibold text-sm mb-2">Type d'examen</h4>
+                            <h4 className="font-semibold text-sm mb-2">
+                              Type d'examen
+                            </h4>
                             <p className="text-sm">{examen.type}</p>
                           </div>
                           <div>
-                            <h4 className="font-semibold text-sm mb-2">Date et médecin</h4>
-                            <p className="text-sm">{examen.date} • {examen.medecin}</p>
+                            <h4 className="font-semibold text-sm mb-2">
+                              Date et médecin
+                            </h4>
+                            <p className="text-sm">
+                              {examen.date} • {examen.medecin}
+                            </p>
                           </div>
                           <div>
-                            <h4 className="font-semibold text-sm mb-2">Diagnostic</h4>
+                            <h4 className="font-semibold text-sm mb-2">
+                              Diagnostic
+                            </h4>
                             <p className="text-sm">{examen.diagnostic}</p>
                           </div>
                           <div>
-                            <h4 className="font-semibold text-sm mb-2">Traitement recommandé</h4>
+                            <h4 className="font-semibold text-sm mb-2">
+                              Traitement recommandé
+                            </h4>
                             <p className="text-sm">{examen.traitement}</p>
                           </div>
                           <div>
-                            <h4 className="font-semibold text-sm mb-2">Images PACS</h4>
-                            <p className="text-sm">{examen.images} images disponibles</p>
+                            <h4 className="font-semibold text-sm mb-2">
+                              Images PACS
+                            </h4>
+                            <p className="text-sm">
+                              {examen.images} images disponibles
+                            </p>
                             <div className="grid grid-cols-3 gap-2 mt-2">
-                              {Array.from({length: Math.min(6, examen.images)}).map((_, i) => (
-                                <div key={i} className="aspect-square bg-muted rounded-lg flex items-center justify-center">
+                              {Array.from({
+                                length: Math.min(6, examen.images),
+                              }).map((_, i) => (
+                                <div
+                                  key={i}
+                                  className="aspect-square bg-muted rounded-lg flex items-center justify-center"
+                                >
                                   <Camera className="h-6 w-6 text-muted-foreground" />
                                 </div>
                               ))}
@@ -329,7 +389,9 @@ export default function Index() {
                   <Card>
                     <CardContent className="p-8 text-center">
                       <Camera className="h-12 w-12 text-muted-foreground mx-auto mb-4" />
-                      <p className="text-muted-foreground">Sélectionnez un examen pour voir les détails</p>
+                      <p className="text-muted-foreground">
+                        Sélectionnez un examen pour voir les détails
+                      </p>
                     </CardContent>
                   </Card>
                 )}
@@ -349,10 +411,18 @@ export default function Index() {
                         <FileText className="h-6 w-6 text-primary" />
                       </div>
                       <div className="flex-1">
-                        <h4 className="font-semibold text-sm mb-1">{consultation.type}</h4>
-                        <p className="text-xs text-muted-foreground mb-2">{consultation.date} • {consultation.medecin}</p>
-                        <p className="text-sm font-medium mb-1">{consultation.diagnostic}</p>
-                        <p className="text-xs text-muted-foreground">{consultation.traitement}</p>
+                        <h4 className="font-semibold text-sm mb-1">
+                          {consultation.type}
+                        </h4>
+                        <p className="text-xs text-muted-foreground mb-2">
+                          {consultation.date} • {consultation.medecin}
+                        </p>
+                        <p className="text-sm font-medium mb-1">
+                          {consultation.diagnostic}
+                        </p>
+                        <p className="text-xs text-muted-foreground">
+                          {consultation.traitement}
+                        </p>
                       </div>
                     </div>
                   </CardContent>
@@ -374,15 +444,23 @@ export default function Index() {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center justify-between mb-1">
-                          <h4 className="font-semibold text-sm">{analyse.type}</h4>
-                          <Badge 
-                            variant={analyse.status === 'anormal' ? 'destructive' : 'default'}
+                          <h4 className="font-semibold text-sm">
+                            {analyse.type}
+                          </h4>
+                          <Badge
+                            variant={
+                              analyse.status === "anormal"
+                                ? "destructive"
+                                : "default"
+                            }
                             className="text-xs"
                           >
                             {analyse.status}
                           </Badge>
                         </div>
-                        <p className="text-xs text-muted-foreground mb-2">{analyse.date}</p>
+                        <p className="text-xs text-muted-foreground mb-2">
+                          {analyse.date}
+                        </p>
                         <p className="text-sm">{analyse.resultats}</p>
                       </div>
                     </div>
@@ -394,7 +472,9 @@ export default function Index() {
 
           {/* History Tab */}
           <TabsContent value="historique" className="space-y-4">
-            <h3 className="text-lg font-semibold">Historique médical complet</h3>
+            <h3 className="text-lg font-semibold">
+              Historique médical complet
+            </h3>
             <Card>
               <CardContent className="p-6">
                 <div className="space-y-6">
@@ -416,7 +496,9 @@ export default function Index() {
                   </div>
                   <Separator />
                   <div>
-                    <h4 className="font-semibold mb-2">Prochains rendez-vous</h4>
+                    <h4 className="font-semibold mb-2">
+                      Prochains rendez-vous
+                    </h4>
                     <ul className="text-sm text-muted-foreground space-y-1">
                       <li>• Consultation cardiologie - 15/02/2024</li>
                       <li>• Contrôle biologique - 20/02/2024</li>
